@@ -7,4 +7,12 @@ class MyExamplesController < ApplicationController
         ]
         render json: {message: fortunes.sample}
     end
+
+    def lotto_numbers
+        numbers = []
+        6.times do
+            numbers << rand(1..60)
+        end
+        render json: {message: numbers}
+    end
 end
